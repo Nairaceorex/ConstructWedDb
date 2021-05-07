@@ -1,0 +1,105 @@
+﻿
+@page
+@model ConstructWedDb.Pages.FilReq.IndexModel
+@{
+}
+<script>
+    function BtnFun(ClassName, obj) {
+        var value = obj.value;
+        var name = "." + ClassName;
+        if (value[0] != "-") {
+            $(name).prop('disabled', false);
+        }
+        else {
+            $(name).prop('disabled', true);
+        }
+    }
+</script>
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    запросы
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/PerDep">отдел кадров</a>
+            </div>
+            <div class="card-body">
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/LiWo">список работ</a>
+            </div>
+            <div class="card-body">
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/LiBri">список бригад</a>
+            </div>
+            <div class="card-body">
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/LiOr">список заказов</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    фильтры
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <form>
+                    Отобразить сотрудников с должностью:
+                    <select asp-items="Model.SelPosition" name="id" class="form-control-sm" onclick="BtnFun('FilPos', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterPosition" class="btn btn-primary FilPos" disabled>Отфильтровать</button>
+                </form>
+                <form>
+                    Отобразить виды работ:
+                    <select asp-items="Model.SelTypeOfJob" name="id" class="form-control-sm" onclick="BtnFun('FilToJ', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FiltertTypeofJob" class="btn btn-primary FilToJ" disabled>Отфильтровать</button>
+                </form>
+                <form>
+                    Отобразить заказы по типу работ:
+                    <select asp-items="Model.SelTypeOfJob" name="id" class="form-control-sm" onclick="BtnFun('FilOr', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterOrder" class="btn btn-primary FilOr" disabled>Отфильтровать</button>
+                </form>
+                <form>
+                    Отобразить заказы по заказчику:
+                    <select asp-items="Model.SelCustomer" name="id" class="form-control-sm" onclick="BtnFun('FilCus', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterCustomer" class="btn btn-primary FilCus" disabled>Отфильтровать</button>
+                </form>
+                <form>
+                    Отобразить заказы по бригаде:
+                    <select asp-items="Model.SelBrigade" name="id" class="form-control-sm" onclick="BtnFun('FilBri', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FlterBrigade" class="btn btn-primary FilBri" disabled>Отфильтровать</button>
+                </form>
+                <form>
+                    Отобразить завершенные или не завершенные заказы:
+                    <select asp-items="Model.SelFin" name="fin" class="form-control-sm" onclick="BtnFun('FilFin', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterFin" class="btn btn-primary FilFin" disabled>Отфильтровать</button>
+                </form>
+                <form>
+                    Отобразить оплаченные или не оплаченные заказы:
+                    <select asp-items="Model.SelPay" name="pay" class="form-control-sm" onclick="BtnFun('FilPay', this)">
+                        <option value="-1">не выбран</option>
+                    </select>
+                    <button asp-page="Filter/FilterPay" class="btn btn-primary FilPay" disabled>Отфильтровать</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

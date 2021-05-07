@@ -1,0 +1,48 @@
+﻿@page
+@model ConstructWedDb.Pages.Brigades.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Brigade[0].Staff1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brigade[0].Staff2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brigade[0].Staff3)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Brigade) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff1.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff2.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff3.ID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

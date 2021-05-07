@@ -1,0 +1,75 @@
+﻿@page
+@model ConstructWedDb.Pages.Orders.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Order.ID" />
+            <div class="form-group">
+                <label asp-for="Order.Price" class="control-label"></label>
+                <input asp-for="Order.Price" class="form-control" />
+                <span asp-validation-for="Order.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.StartDate" class="control-label"></label>
+                <input asp-for="Order.StartDate" class="form-control" />
+                <span asp-validation-for="Order.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.EndDate" class="control-label"></label>
+                <input asp-for="Order.EndDate" class="form-control" />
+                <span asp-validation-for="Order.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Order.CompletionMark" /> @Html.DisplayNameFor(model => model.Order.CompletionMark)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Order.AboutPayment" /> @Html.DisplayNameFor(model => model.Order.AboutPayment)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.CustomerID" class="control-label"></label>
+                <select asp-for="Order.CustomerID" class="form-control" asp-items="ViewBag.CustomerID"></select>
+                <span asp-validation-for="Order.CustomerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.TypeOfJobID" class="control-label"></label>
+                <select asp-for="Order.TypeOfJobID" class="form-control" asp-items="ViewBag.TypeOfJobID"></select>
+                <span asp-validation-for="Order.TypeOfJobID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.BrigadeID" class="control-label"></label>
+                <select asp-for="Order.BrigadeID" class="form-control" asp-items="ViewBag.BrigadeID"></select>
+                <span asp-validation-for="Order.BrigadeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.StaffID" class="control-label"></label>
+                <select asp-for="Order.StaffID" class="form-control" asp-items="ViewBag.StaffID"></select>
+                <span asp-validation-for="Order.StaffID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
