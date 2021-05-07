@@ -2,13 +2,13 @@
 @model ConstructWedDb.Pages.TypeOfJobs.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Подробнее";
 }
 
-<h1>Details</h1>
+<h1>Подробнее</h1>
 
 <div>
-    <h4>TypeOfJob</h4>
+    <h4>Вид работы</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -50,6 +50,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.TypeOfJob.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.TypeOfJob.ID">Изменить</a> |
+    <a asp-page="./Index">Назад</a>
 </div>

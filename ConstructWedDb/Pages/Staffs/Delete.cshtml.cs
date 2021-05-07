@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ConstructWedDb.Data;
 using ConstructWedDb.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ConstructWedDb.Pages.Staffs
 {
@@ -18,11 +17,6 @@ namespace ConstructWedDb.Pages.Staffs
         public DeleteModel(ConstructWedDb.Data.ConstructWedDbContext context)
         {
             _context = context;
-        }
-        public IActionResult OnGet()
-        {
-            ViewData["PositionID"] = new SelectList(_context.Position, "ID", "Name");
-            return Page();
         }
 
         [BindProperty]

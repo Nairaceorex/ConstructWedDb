@@ -2,12 +2,12 @@
 @model ConstructWedDb.Pages.TypeOfJobs.EditModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Изменить";
 }
 
-<h1>Edit</h1>
+<h1>Изменить</h1>
 
-<h4>TypeOfJob</h4>
+<h4>Вид работы</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -30,29 +30,29 @@
                 <span asp-validation-for="TypeOfJob.Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TypeOfJob.Material1ID" class="control-label"></label>
+                <label asp-for="TypeOfJob.Material1ID" class="control-label">Материал 1</label>
                 <select asp-for="TypeOfJob.Material1ID" class="form-control" asp-items="ViewBag.Material1ID"></select>
                 <span asp-validation-for="TypeOfJob.Material1ID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TypeOfJob.Material2ID" class="control-label"></label>
+                <label asp-for="TypeOfJob.Material2ID" class="control-label">Материал 2</label>
                 <select asp-for="TypeOfJob.Material2ID" class="form-control" asp-items="ViewBag.Material2ID"></select>
                 <span asp-validation-for="TypeOfJob.Material2ID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TypeOfJob.Material3ID" class="control-label"></label>
+                <label asp-for="TypeOfJob.Material3ID" class="control-label">Материал 3</label>
                 <select asp-for="TypeOfJob.Material3ID" class="form-control" asp-items="ViewBag.Material3ID"></select>
                 <span asp-validation-for="TypeOfJob.Material3ID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index">Назад</a>
 </div>
 
 @section Scripts {

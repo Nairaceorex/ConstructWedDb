@@ -22,9 +22,9 @@ namespace ConstructWedDb.Pages.Orders
         public IActionResult OnGet()
         {
         ViewData["BrigadeID"] = new SelectList(_context.Brigade, "ID", "ID");
-        ViewData["CustomerID"] = new SelectList(_context.Customer, "ID", "ID");
-        ViewData["StaffID"] = new SelectList(_context.Staff, "ID", "ID");
-        ViewData["TypeOfJobID"] = new SelectList(_context.TypeOfJob, "ID", "ID");
+        ViewData["CustomerID"] = new SelectList(_context.Customer, "ID", "FullName");
+        ViewData["StaffID"] = new SelectList(_context.Staff, "ID", "FullName");
+        ViewData["TypeOfJobID"] = new SelectList(_context.TypeOfJob, "ID", "Name");
             return Page();
         }
 

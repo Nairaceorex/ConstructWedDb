@@ -21,9 +21,9 @@ namespace ConstructWedDb.Pages.Brigades
 
         public IActionResult OnGet()
         {
-        ViewData["Staff1ID"] = new SelectList(_context.Staff, "ID", "Name");
-        ViewData["Staff2ID"] = new SelectList(_context.Staff, "ID", "Name");
-        ViewData["Staff3ID"] = new SelectList(_context.Staff, "ID", "Name");
+        ViewData["Staff1ID"] = new SelectList(_context.Staff, "ID", "FullName");
+        ViewData["Staff2ID"] = new SelectList(_context.Staff, "ID", "FullName");
+        ViewData["Staff3ID"] = new SelectList(_context.Staff, "ID", "FullName");
             return Page();
         }
 

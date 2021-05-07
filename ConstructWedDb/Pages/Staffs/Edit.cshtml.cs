@@ -19,11 +19,6 @@ namespace ConstructWedDb.Pages.Staffs
         {
             _context = context;
         }
-        public IActionResult OnGet()
-        {
-            ViewData["PositionID"] = new SelectList(_context.Position, "ID", "Name");
-            return Page();
-        }
 
         [BindProperty]
         public Staff Staff { get; set; }
@@ -42,7 +37,7 @@ namespace ConstructWedDb.Pages.Staffs
             {
                 return NotFound();
             }
-           ViewData["PositionID"] = new SelectList(_context.Position, "ID", "ID");
+           ViewData["PositionID"] = new SelectList(_context.Position, "ID", "Name");
             return Page();
         }
 

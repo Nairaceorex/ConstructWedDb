@@ -21,9 +21,9 @@ namespace ConstructWedDb.Pages.TypeOfJobs
 
         public IActionResult OnGet()
         {
-        ViewData["Material1ID"] = new SelectList(_context.Material, "ID", "ID");
-        ViewData["Material2ID"] = new SelectList(_context.Material, "ID", "ID");
-        ViewData["Material3ID"] = new SelectList(_context.Material, "ID", "ID");
+        ViewData["Material1ID"] = new SelectList(_context.Material, "ID", "Name");
+        ViewData["Material2ID"] = new SelectList(_context.Material, "ID", "Name");
+        ViewData["Material3ID"] = new SelectList(_context.Material, "ID", "Name");
             return Page();
         }
 
