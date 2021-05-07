@@ -26,10 +26,13 @@ namespace ConstructWedDb.Models
         [Display(Name = "ID_Заказчик")]
         public Customer Customer { get; set; }
         public long? TypeOfJobID { get; set; }
+        [Display(Name = "ID_Вид работы")]
         public TypeOfJob TypeOfJob { get; set; }
         public long? BrigadeID { get; set; }
+        [Display(Name = "ID_Бригада")]
         public Brigade Brigade { get; set; }
         public long? StaffID { get; set; }
+        [Display(Name = "ID_Сотрудник")]
         public Staff Staff { get; set; }
     }
 }
